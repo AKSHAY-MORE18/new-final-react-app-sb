@@ -1,19 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
-  let title = "Heloo world";
-  let list = ["delhi", "cucutta", "mumbai", "Chennai", "pune", "lonaval"];
-  return(
-  <div>
-<h1>{title}</h1>
-<ul>
-{list.map((item)=>{
-return <li>{item}</li>;
-})}
-</ul>
+  let list = ["heloo world", "helo"];
+  return (
+    <div>
+      <h1>Working with the events</h1>
+      <input type="button" value="Say hello" />
+
+
+      {list.map((item)=>{
+        return <h3>{item}</h3>
+      })}
     </div>
   );
 }
-
 export default App;
