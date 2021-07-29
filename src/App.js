@@ -6,10 +6,22 @@ export default function App() {
 
  return (
  <div>
-      hello world
+     <HelloWorld/ >
+     <HelloWorld />
+      <helloUniverse />
  </div>
  
  );
 }
+//hellow world is a tag name 
+//tags :: Components :: Faolow Pascal case convention
+function HelloWorld () {
+  return <h1>Hello World</h1>;
+}
 
-export default App;
+
+function helloUniverse() {
+  return <h1>Hello universe</h1>
+}
+
+
