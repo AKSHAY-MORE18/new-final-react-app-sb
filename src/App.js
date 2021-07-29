@@ -32,7 +32,7 @@ return (
     <input type="button" value="Add new Element in list" onClick={addNewElement} />
 
 {list.map((item)=>{
-return <h1>{item}</h1>
+return <div className="alert alert-success p-2 ">{item}</div>
 })}
    
   </div>
