@@ -4,17 +4,19 @@ import { useState } from "react";
 
 function App() {
 
-  //stateless variable
-  let title = "Learning react"
-let counter =100;
-let list= [];
+ let [counter, setCounter] =useState(100);
+ let [name, setName] = useState("rahul")
+ let [active, setActive] = useState(true)
+ let [list, setList] = useState(["Delhi", "Mumbai"]);
 
-  return( <div>
-    <h1> {title}</h1>
-    </div>
 
-    /** inside cursly brace u can write anything inside it */
-  );
+return (
+  <div>
+    <h1>Statefull counter</h1>
+    <h1>Counter:: {counter}</h1>
+    <h1>List :: {list}</h1>
+  </div>
+);
 }
 
 export default App;
