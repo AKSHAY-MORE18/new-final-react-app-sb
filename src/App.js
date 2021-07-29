@@ -4,17 +4,22 @@ import { useState } from "react";
 
 function App() {
 
- let [counter, setCounter] =useState(100);
- let [name, setName] = useState("rahul")
- let [active, setActive] = useState(true)
- let [list, setList] = useState(["Delhi", "Mumbai"]);
+ let [counter, setCounter] =useState(0);
+
+ let updateCounter = () =>{
+  //  alert("Something is happening");
+   let newvalue = counter+1;
+   setCounter(newvalue);
+ };
 
 
 return (
   <div>
     <h1>Statefull counter</h1>
-    <h1>Counter:: {counter}</h1>
-    <h1>List :: {list}</h1>
+    <h1>Counter:: {counter} 
+    <input type="button" value="Increment" onClick={updateCounter} />
+    </h1>
+   
   </div>
 );
 }
