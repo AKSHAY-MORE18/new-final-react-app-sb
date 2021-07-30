@@ -35,12 +35,20 @@ function MyComponent(){
 
   ///////////////4
   const handleInputChange = (e) =>{ 
-        console.log(e.target.value);
+     //   console.log(e.target.value);
         const newthought =  e.target.value;
         setThought(newthought);
 
        
   };
+//enter 2
+  const handleKeyEvent = (e) =>{
+    console.log(e.key, e.keyCode);
+    if(e.keyCode==13){
+      console.log("User has pressed entered ");
+      postyourThought();
+    }
+  }
   
   return(
      <div className= "m-2">
@@ -53,6 +61,7 @@ function MyComponent(){
        placeholder="post your thoughts"
        value={thought} //2
        onChange={handleInputChange} ///////////3
+       onKeyDown={handleKeyEvent}  //enter 1
         />
   <input type="button"
    value= "Post your thoughts"  
@@ -62,7 +71,7 @@ function MyComponent(){
    <div className="h1 bg-light m-1 p-3 text-dark">Whats on your mind</div>
 
     {list.map( (item)=> {
-        return  <div className="alert alert-primary mb-2 border">{item}}</div>
+        return  <div className="alert alert-primary mb-2 border">{item}</div>
     })}
 
   
