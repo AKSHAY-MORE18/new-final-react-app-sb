@@ -20,25 +20,43 @@ function MyComponent(){
 
   let [list , setList] = useState(["Delhi", "Cucutta"]);
 
+  let [thought, setThought]=useState("");//1
+
   const postyourThought = () => {
  
-      const newList =["new Thoughts", ...list];
+   //   const newList =["new Thoughts", ...list];
+   const newList =[thought, ...list];
       setList(newList);
+
+      ////clear input
+      setThought("");
+  };
+
+
+  ///////////////4
+  const handleInputChange = (e) =>{ 
+        console.log(e.target.value);
+        const newthought =  e.target.value;
+        setThought(newthought);
+
+       
   };
   
   return(
      <div className= "m-2">
-    <h1  className= "m-3">Work with the forms</h1>
+    <h1  className= "m-3 rounded sticky-top" >Work with mini fiorms</h1>
 
     <input 
     type="text"
      className="form-control form-control-lg my-3"
       style={{height :75}}
        placeholder="post your thoughts"
+       value={thought} //2
+       onChange={handleInputChange} ///////////3
         />
   <input type="button"
    value= "Post your thoughts"  
-   className= "btn btn-primary"
+   className= "btn btn-outline-primary"
    onClick={postyourThought}/>
 
    <div className="h1 bg-light m-1 p-3 text-dark">Whats on your mind</div>
