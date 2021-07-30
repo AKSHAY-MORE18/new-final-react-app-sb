@@ -23,7 +23,7 @@ export default function App() {
 function Page1(){
   return(
 <div>
-<h1>Page1</h1>
+<h1>Page1 cuba</h1>
 <p>
   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque aspernatur nihil, sed eligendi vel asperiores necessitatibus adipisci corrupti provident non sapiente autem illum doloremque obcaecati esse odio, nisi veritatis minima?
 </p>
@@ -36,7 +36,7 @@ function Page1(){
 function Page2(){
   return(
 <div>
-<h1>Page2</h1>
+<h1>Page2 vegas</h1>
 <p>
   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque aspernatur nihil, sed eligendi vel asperiores necessitatibus adipisci corrupti provident non sapiente autem illum doloremque obcaecati esse odio, nisi veritatis minima?
 </p>
@@ -48,7 +48,7 @@ function Page2(){
 function Page3(){
   return(
 <div>
-<h1>Page3</h1>
+<h1>Page3 kashmir</h1>
 <p>
   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque aspernatur nihil, sed eligendi vel asperiores necessitatibus adipisci corrupti provident non sapiente autem illum doloremque obcaecati esse odio, nisi veritatis minima?
 </p>
