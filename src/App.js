@@ -1,10 +1,36 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@AKSHAY-MORE18 
+july-2021
+/
+day7-react-app
+0
+01
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+day7-react-app/src/App.js /
+@santoshmondal
+santoshmondal static simulation of the event handle.
+Latest commit f6eb0b0 3 hours ago
+ History
+ 1 contributor
+106 lines (95 sloc)  2.45 KB
+  
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
-import { HelloWorld } from "./pages/HelloWorld";
-import { helloUniverse } from "./pages/helloUniverse";
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import { func } from "prop-types";
 
 export default function App() {
   return (
@@ -15,45 +41,58 @@ export default function App() {
 }
 
 function MyRegisterComponent() {
-  let [userList, setuserList] = userState([{ id: 1 }]);
+  let [userList, setUserList] = useState([
+    { id: 1, name: "rahul", email: "rahul@gmail.com", mobile: "212121" },
+    { id: 2, name: "sachin", email: "sachin@gmail.com", mobile: "212121" },
+  ]);
 
-  constAddNewUser =() =>{
-    const newUser ={id: userList.length+ 1, name:}
-  }
+  const addNewUser = () => {
+    const newuser = {
+      id: userList.length + 1,
+      name: "Sample",
+      email: "sample@gmail.com",
+      mobile: "1212",
+    };
+
+    const newUserList = [newuser, ...userList];
+    setUserList(newUserList);
+  };
+
   return (
     <div>
-      <h1>User Registration</h1>
+      <h1 className="bg-dark text-light p-3 ">User Registeation </h1>
 
+      {/** FORM COMPONENT */}
       <form className="m-2">
         <div>
           <input
             type="text"
-            className="form-control form-control-lg "
-            placeholder="enter your name"
+            className="form-control form-control-lg mb-1"
+            placeholder="Enter username"
           />
         </div>
 
         <div>
           <input
-            type="text"
-            className="form-control form-control-lg "
-            placeholder="enter your name"
+            type="password"
+            className="form-control form-control-lg mb-1"
+            placeholder="Enter Passwword"
           />
         </div>
 
         <div>
           <input
-            type="text"
-            className="form-control form-control-lg "
-            placeholder="enter your name"
+            type="email"
+            className="form-control form-control-lg mb-1"
+            placeholder="Enter Email"
           />
         </div>
 
         <div>
           <input
             type="mobile"
-            className="form-control form-control-lg "
-            placeholder="enter your Number"
+            className="form-control form-control-lg mb-1"
+            placeholder="Enter Mobile"
           />
         </div>
 
@@ -61,16 +100,18 @@ function MyRegisterComponent() {
           <input
             type="button"
             value="Register"
-            className="btn btn-secondary w-100"
+            onClick={addNewUser}
+            className="btn btn-lg btn-secondary w-100"
           />
         </div>
       </form>
 
+      {/** List BOX HERE */}
       <table className="table table-dark table-striped m-2">
         <thead>
           <tr>
             <th scope="col">#ID</th>
-            <th scope="col">uSENAME</th>
+            <th scope="col">USERNAME</th>
             <th scope="col">PASSWORD</th>
             <th scope="col">EMAIL</th>
             <th scope="col">MOBILE</th>
@@ -80,24 +121,29 @@ function MyRegisterComponent() {
           {userList.map((item) => {
             return (
               <tr>
-                <td>{item.mobile}</td>
-                <td>{item.mobile}</td>
-                <td>{item.mobile}</td>
-                <td>{item.mobile}</td>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{item.password}</td>
+                <td>{item.email}</td>
                 <td>{item.mobile}</td>
               </tr>
             );
           })}
-
-          <tr>
-            <td>1</td>
-            <td>rahul</td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
         </tbody>
       </table>
     </div>
   );
 }
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
