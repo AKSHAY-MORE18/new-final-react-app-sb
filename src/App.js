@@ -19,6 +19,12 @@ export default function App() {
 function MyComponent(){
 
   let [list , setList] = useState(["Delhi", "Cucutta"]);
+
+  const postyourThought = () => {
+ 
+      const newList =["new Thoughts", ...list];
+      setList(newList);
+  };
   
   return(
      <div className= "m-2">
@@ -32,7 +38,8 @@ function MyComponent(){
         />
   <input type="button"
    value= "Post your thoughts"  
-   className= "btn btn-primary"/>
+   className= "btn btn-primary"
+   onClick={postyourThought}/>
 
    <div className="h1 bg-light m-1 p-3 text-dark">Whats on your mind</div>
 
