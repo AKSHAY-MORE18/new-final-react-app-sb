@@ -9,7 +9,8 @@ import { func } from "prop-types";
 function App(){
   return(
   <div>
-    
+      <MyComponent/>
+    <MyComponent  heading="React" desc="I am good "/>
     <MyComponent  heading="java" desc="java is cool"/>
     <MyComponent  heading="javascript" desc="i am hot "/>
     <MyComponent  heading="python" desc="i am sexy"/>
@@ -17,7 +18,7 @@ function App(){
   )
 }
 
-function MyComponent({heading,desc}){
+function MyComponent({heading="Default Heading",desc="Description is not avialable"}){
   return(
     <div className= "bg-dark p-3 text-light mb-1">
 <h1>learning {heading}</h1>
