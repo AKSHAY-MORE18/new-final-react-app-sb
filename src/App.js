@@ -1,10 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
-import { HelloWorld } from "./pages/HelloWorld";
-import { helloUniverse } from "./pages/helloUniverse";
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import { func } from "prop-types";
 
 export default function App() {
   return (
@@ -15,40 +11,42 @@ export default function App() {
 }
 
 function MyRegisterComponent() {
+  let [userList, setUserList] = useState([1, 1]);
   return (
     <div>
-      <h1>User Registration</h1>
+      <h1 className="bg-dark text-light p-3 ">User Registeation </h1>
 
+      {/** FORM COMPONENT */}
       <form className="m-2">
         <div>
           <input
             type="text"
-            className="form-control form-control-lg "
-            placeholder="enter your name"
+            className="form-control form-control-lg mb-1"
+            placeholder="Enter username"
           />
         </div>
 
         <div>
           <input
-            type="text"
-            className="form-control form-control-lg "
-            placeholder="enter your name"
+            type="password"
+            className="form-control form-control-lg mb-1"
+            placeholder="Enter Passwword"
           />
         </div>
 
         <div>
           <input
-            type="text"
-            className="form-control form-control-lg "
-            placeholder="enter your name"
+            type="email"
+            className="form-control form-control-lg mb-1"
+            placeholder="Enter Email"
           />
         </div>
 
         <div>
           <input
             type="mobile"
-            className="form-control form-control-lg "
-            placeholder="enter your Number"
+            className="form-control form-control-lg mb-1"
+            placeholder="Enter Mobile"
           />
         </div>
 
@@ -56,31 +54,35 @@ function MyRegisterComponent() {
           <input
             type="button"
             value="Register"
-            className="btn btn-secondary w-100"
+            className="btn btn-lg btn-secondary w-100"
           />
         </div>
       </form>
 
+      {/** List BOX HERE */}
       <table className="table table-dark table-striped m-2">
-  <thead>
-    <tr>
-      <th scope="col">#ID</th>
-      <th scope="col">uSENAME</th>
-      <th scope="col">PASSWORD</th>
-      <th scope="col">EMAIL</th>
-      <th scope="col">MOBILE</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>rahul</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      
-    </tr>
-  </tbody>
+        <thead>
+          <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">USERNAME</th>
+            <th scope="col">PASSWORD</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">MOBILE</th>
+          </tr>
+        </thead>
+        <tbody>
+          {userList.map((item) => {
+            return (
+              <tr>
+                <td>1</td>
+                <td>Rahul</td>
+                <td>@#@#@#@#</td>
+                <td>rahul@mgmil.com</td>
+                <td>121212</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </div>
   );
