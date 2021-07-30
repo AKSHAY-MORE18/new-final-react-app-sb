@@ -12,17 +12,34 @@ export default function App() {
 }
 
 function MyRegisterComponent() {
+  const [list, setList] = useState([]);
 
-const makeAjaxBackeendApiCall = async ()=>{
-  const url= "https://jsonplaceholder.typicode.com/posts"
-  const result = await axios.get(url);   
-  console.log(result.data);
-};
+  const makeAjaxBackendApiCall = async () => {
+    const url = "https://jsonplaceholder.typicode.com/posts";
+    const result = await axios.get(url);
+
+    // console.log(result.data);
+    const newlist = [...result.data, ...list];
+    setList(newlist);
+  };
 
   return (
     <div>
-      <h1>Lets connect to the backend</h1>
-      <input type="button" values="Make backend call" />
+      <h1 className="bg-primary text-light p-4">Lets connect with backend</h1>
+      <input
+        type="button"
+        className="btn btn-primary w-100 mb-1"
+        value="MAKE AJAX/BACKEND CALL"
+        onClick={makeAjaxBackendApiCall}
+      />
+
+      {list.map((item) => {
+        return (
+          <div className="alert alert-primary text-capitalize">
+            {item.title}
+          </div>
+        );
+      })}
     </div>
   );
 }
