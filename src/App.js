@@ -15,6 +15,11 @@ export default function App() {
 }
 
 function MyRegisterComponent() {
+  let [userList, setuserList] = userState([{ id: 1 }]);
+
+  constAddNewUser =() =>{
+    const newUser ={id: userList.length+ 1, name:}
+  }
   return (
     <div>
       <h1>User Registration</h1>
@@ -62,25 +67,36 @@ function MyRegisterComponent() {
       </form>
 
       <table className="table table-dark table-striped m-2">
-  <thead>
-    <tr>
-      <th scope="col">#ID</th>
-      <th scope="col">uSENAME</th>
-      <th scope="col">PASSWORD</th>
-      <th scope="col">EMAIL</th>
-      <th scope="col">MOBILE</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>rahul</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      
-    </tr>
-  </tbody>
+        <thead>
+          <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">uSENAME</th>
+            <th scope="col">PASSWORD</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">MOBILE</th>
+          </tr>
+        </thead>
+        <tbody>
+          {userList.map((item) => {
+            return (
+              <tr>
+                <td>{item.mobile}</td>
+                <td>{item.mobile}</td>
+                <td>{item.mobile}</td>
+                <td>{item.mobile}</td>
+                <td>{item.mobile}</td>
+              </tr>
+            );
+          })}
+
+          <tr>
+            <td>1</td>
+            <td>rahul</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
       </table>
     </div>
   );
