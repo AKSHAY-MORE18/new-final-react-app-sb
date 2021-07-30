@@ -11,12 +11,14 @@ export default function App() {
 
   return  (
   <div>
-    <h1>MyComponent</h1>
+    <MyComponent/>
   </div>
   );
 }
 
 function MyComponent(){
+
+  let [list , setList] = useState(["Delhi", "Cucutta"]);
   
   return(
      <div className= "m-2">
@@ -24,13 +26,21 @@ function MyComponent(){
 
     <input 
     type="text"
-     className="form-control form-control-lg"
+     className="form-control form-control-lg my-3"
       style={{height :75}}
        placeholder="post your thoughts"
         />
   <input type="button"
    value= "Post your thoughts"  
    className= "btn btn-primary"/>
+
+   <div className="h1 bg-light m-1 p-3 text-dark">Whats on your mind</div>
+
+    {list.map( (item)=> {
+        return  <div className="alert alert-primary mb-2 border">{item}}</div>
+    })}
+
+  
   
   </div>
   );
