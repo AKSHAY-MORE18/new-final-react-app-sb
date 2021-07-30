@@ -6,29 +6,26 @@ import {helloUniverse} from "./pages/helloUniverse";
 import { BrowserRouter,Route, Link } from "react-router-dom";
 import { func } from "prop-types";
 
-function App(){
+ export default function App(){
   return(
   <div>
-      <MyComponent/>
-    <MyComponent  heading="React" desc="I am good "/>
-    <MyComponent  heading="java" desc="java is cool"/>
-    <MyComponent  heading="javascript" desc="i am hot "/>
-    <MyComponent  heading="python" desc="i am sexy"/>
+ <MyComponent/>
   </div>
   )
 }
 
-function MyComponent({heading="Default Heading",desc="Description is not avialable"}){
+function MyComponent(){
+
+  const clickHandler=(e) =>{
+    console.log(e)
+    alert("something is happening",e)
+  }
   return(
-    <div className= "bg-dark p-3 text-light mb-1">
-<h1>learning {heading}</h1>
-<hr />
-<p>
-<mark className ="rounded bg-warning">{desc}</mark>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quisquam doloremque minus obcaecati, repellat adipisci nam impedit consequatur exercitationem corporis tempore eos omnis delectus sit pariatur libero incidunt quae at?
-</p>
-      </div>
+     <div>
+       <h1>Hello World</h1>
+
+       <input type="button" value="CLICK ME" onClick={clickHandler} />
+    </div>
   )
 }
 
-export default App;
