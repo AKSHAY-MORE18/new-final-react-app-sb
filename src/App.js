@@ -16,17 +16,23 @@ import { func } from "prop-types";
 
 function MyComponent(){
 
-  const clickHandler=(e) =>{
-    console.log(e);
-    alert("something is happening",e)
+  const clickHandler=(e,id) =>{
+    console.log(e, id);
+   
   }
   return(
      <div>
        <h1>Hello World</h1>
 
-       <input type="button" value="CLICK ME" onClick={clickHandler} />
+       <input type="button" value="CLICK ME  " onClick={clickHandler} />
 
        <input type="button" value="CLICK ME" onClick={clickHandler} />
+       
+       <input type="button" value="CLICK ME3"
+        onClick={(e)=>clickHandler} />
+
+       <input type="button" value="CLICK ME3"
+        onClick={(e)=>clickHandler(e,100)} />
 
     </div>
   )
